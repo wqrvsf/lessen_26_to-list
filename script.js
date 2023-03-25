@@ -6,25 +6,27 @@ btn.addEventListener('click', function(){
     const li = document.createElement('li');
     li.className = 'item';
     li.textContent = input.value;
-    li.append(ul);
+    ul.append(li);
 
     const block = document.createElement('div');
-    block.append(li);
+    li.append(block);
     block.className = 'item__btns';
 
     const i = document.createElement('i');
     i.className = 'fa-regular fa-square-check';
-    i.append(block);
+    block.append(i);
 
     i.addEventListener('click', function(){
-        this.classList.toggle('done');
+        li.classList.toggle('done');
     });
 
     const i2 = document.createElement('i');
     i2.className = 'fa-solid fa-trash-can';
-    i2.append(block);
+    block.append(i2);
 
-
+    i2.addEventListener('click', function(){
+        li.parentNode.removeChild(li);
+    });
 });
 
 
