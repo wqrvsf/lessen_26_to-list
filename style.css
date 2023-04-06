@@ -10,7 +10,6 @@ body {
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    padding: 20px;
 }
 
 ul {
@@ -20,6 +19,12 @@ ul {
 
 ul>li {
     list-style: none;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: #e64d4d;
 }
 
 .container {
@@ -33,6 +38,7 @@ ul>li {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    
 }
 
 /* Блок добавления задачи (поле и кнопка) */
