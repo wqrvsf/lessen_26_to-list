@@ -24,7 +24,7 @@ ul>li {
 .wrapper {
     height: 100%;
     width: 100%;
-    background-color: #e64d4d;
+    background-color: #daa5a5;
 }
 
 .container {
@@ -38,7 +38,7 @@ ul>li {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 20px;
-    
+
 }
 
 /* Блок добавления задачи (поле и кнопка) */
