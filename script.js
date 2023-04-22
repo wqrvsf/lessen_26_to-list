@@ -20,20 +20,20 @@ tasks.forEach(task => {
     )
 });
 
-ul.addEventListener('click', function(event){
-     let target = event.target;
+ul.addEventListener('click', function (event) {
+    let target = event.target;
     if (target.dataset.action == 'complete') {
         completeBtn(target);
     }
-    
+
     if (target.dataset.action == 'delete') {
         removeTask(target);
     }
 
-    WriteLS();
+    writeLS();
 });
 
-btn.addEventListener('click', function(){
+btn.addEventListener('click', function () {
     const li = document.createElement('li');
     addTask(li);
     ul.append(li);
@@ -41,18 +41,8 @@ btn.addEventListener('click', function(){
     writeLS();
 });
 
-
-
-btn.addEventListener('click', function () {
-    addTask();
-    input.value = '';
-});
-doneTask();
-deleteTask();
-
-function addTask() {
-    const li = document.createElement('li');
-    li.className = 'item';
+function addTask(li) {
+    li.classList.add('item');
     li.textContent = input.value;
     ul.append(li);
 
@@ -81,7 +71,7 @@ function addTask() {
     }
 
     tasks.push(newTask);
-    newTask.setAttribute('id', newTask.id);
+    li.setAttribute('id', newTask.id);
 }
 
 function completeBtn(target) {
@@ -98,7 +88,7 @@ function completeBtn(target) {
     }
 }
 
-function removeTask (target) {
+function removeTask(target) {
     target.closest('li').remove();
     input.value = '';
     const index = tasks.findIndex((task) => {
@@ -112,7 +102,7 @@ function writeLS() {
     localStorage.setItem('tasksLS', JSON.stringify(tasks));
 }
 
-function doneTask() {
+/* function doneTask() {
     ul.addEventListener('click', function (event) {
         let target = event.target;
         if (target.classList.contains('fa-square-check')) {
@@ -132,7 +122,7 @@ function deleteTask() {
         }
 
     })
-}
+} */
 
 
 
